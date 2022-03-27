@@ -15,18 +15,22 @@
             <button type="button" class="btn btn-edit" data-bs-toggle="modal" data-bs-target="#editUserModal">
                 <i class="icon-edit"></i>
             </button>
-
         </div>
         <div class="col-4">
             <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#followUserModal">
-  <i class="icon-user-follow"></i><span>Follow user</span>
-</button>
-
+                <i class="icon-user-follow"></i><span>Follow user</span>
+            </button>
         </div>
     </div>
     <div class="row">
-        <div class="col-10">col-10</div>
-        <div class="col-2">col-2</div>
+        <div class="col-10">
+            <input class="form-control" type="email" form="post-form" name="message">
+        </div>
+        <div class="col-2">
+            <form action="" method="post" id="post-form">
+              <button type="submit" class="btn btn-dark">Send</button>
+          </form>
+        </div>
     </div>
     <div class="col">
         <div class="card">
@@ -42,13 +46,13 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="editUserModalLabel">Follow user</h5>
+          <h5 class="modal-title" id="editUserModalLabel">Edit profile</h5>
       </div>
       <div class="modal-body">
           <label for="first_name" class="form-label">First name</label>
-          <input class="form-control" type="text" form="edit-user-form" id="first_name" name="first_name">
+          <input class="form-control" type="text" form="edit-user-form" id="first_name" name="firstName">
           <label for="last_name" class="form-label">Last name</label>
-          <input class="form-control" type="text" form="edit-user-form" id="last_name" name="last_name">
+          <input class="form-control" type="text" form="edit-user-form" id="last_name" name="lastName">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
