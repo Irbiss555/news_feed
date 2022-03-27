@@ -12,3 +12,11 @@
     display: flex;
     justify-content: end;
 }
+.profile-block {
+    display: flex;
+    align-items: center;
+}
+.profile-block > h3 {
+    margin: 0 5px 0 0;
+    text-transform: capitalize;
+}

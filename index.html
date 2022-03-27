@@ -10,8 +10,8 @@
 <body>
 <div class="container">
     <div class="row justify-content-between">
-        <div class="col-4">
-            One of two columns
+        <div class="col-4 profile-block">
+            <h3>Some name</h3>
             <button type="button" class="btn btn-edit" data-bs-toggle="modal" data-bs-target="#editUserModal">
                 <i class="icon-edit"></i>
             </button>
@@ -55,7 +55,7 @@
           <input class="form-control" type="text" form="edit-user-form" id="last_name" name="lastName">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
           <form action="" method="post" id="edit-user-form">
               <button type="submit" class="btn btn-dark">Save</button>
           </form>
@@ -74,7 +74,7 @@
           <input class="form-control" type="email" form="follow-user-form" id="email" name="email">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
           <form action="" method="post" id="follow-user-form">
               <button type="submit" class="btn btn-dark">Add</button>
           </form>
