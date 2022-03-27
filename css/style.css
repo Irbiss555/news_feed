@@ -5,3 +5,10 @@
 .btn-edit {
     padding: 0;
 }
+.row {
+    margin-bottom: 40px;
+}
+.right-block {
+    display: flex;
+    justify-content: end;
+}
