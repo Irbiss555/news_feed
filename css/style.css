@@ -2,3 +2,6 @@
 .icon-user-follow, .icon-edit{
     font-size: 35px;
 }
+.btn-edit {
+    padding: 0;
+}
