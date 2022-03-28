@@ -24,10 +24,10 @@
     </div>
     <div class="row">
         <div class="col">
-            <input class="form-control" type="text" form="post-form" name="message" placeholder="What's happening?" required>
+            <input class="form-control" id="post-input" type="text" form="post-form" name="message" placeholder="What's happening?" required>
         </div>
         <div class="col-1 right-block">
-            <form action="" method="post" id="post-form">
+            <form id="post-form">
               <button type="submit" class="btn btn-dark">Send</button>
           </form>
         </div>
@@ -42,9 +42,9 @@
       </div>
       <div class="modal-body">
           <label for="first_name" class="form-label">First name</label>
-          <input class="form-control" type="text" form="edit-user-form" id="first_name" name="firstName">
+          <input class="form-control" type="text" form="edit-user-form" id="first_name" name="firstName" required>
           <label for="last_name" class="form-label">Last name</label>
-          <input class="form-control" type="text" form="edit-user-form" id="last_name" name="lastName">
+          <input class="form-control" type="text" form="edit-user-form" id="last_name" name="lastName" required>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
@@ -63,7 +63,7 @@
       </div>
       <div class="modal-body">
           <label for="email" class="form-label">Email</label>
-          <input class="form-control" type="email" form="follow-user-form" id="email" name="email">
+          <input class="form-control" type="email" form="follow-user-form" id="email" name="email" required>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
