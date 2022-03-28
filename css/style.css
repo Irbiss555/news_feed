@@ -20,3 +20,6 @@
     margin: 0 5px 0 0;
     text-transform: capitalize;
 }
+#posts-block > .card {
+    margin-bottom: 10px;
+}
