@@ -16,7 +16,10 @@
                 <i class="icon-edit"></i>
             </button>
         </div>
-        <div class="col-4 right-block">
+        <div class="col-6 right-block">
+            <button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#subscriptionsModal">
+                <i class="icon-subscriptions"></i><span>Subscriptions</span>
+            </button>
             <button type="button" class="btn btn-outline-dark" id="btn-unfollow">
                 <i class="icon-unfollow"></i><span>Unfollow all</span>
             </button>
@@ -37,7 +40,7 @@
     </div>
     <div class="col" id="posts-block">
     </div>
-    <div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+<div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -58,7 +61,7 @@
     </div>
   </div>
 </div>
-    <div class="modal fade" id="followUserModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="followUserModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -73,6 +76,40 @@
           <form action="" method="post" id="follow-user-form">
               <button type="submit" class="btn btn-dark">Add</button>
           </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="subscriptionsModal" tabindex="-1" aria-labelledby="subscriptionsModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="subscriptionsModalLabel">Subscriptions</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First name</th>
+      <th scope="col">Last name</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>fsfvsfvfvs@mdo</td>
+    </tr>
+  </tbody>
+</table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
