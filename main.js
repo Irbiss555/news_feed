@@ -50,7 +50,9 @@ let addPost = async function (event) {
     await makeRequest(`${baseUrl}/posts`, $(event.currentTarget).serialize(), 'POST')
     event.currentTarget.reset()
 }
-
+let unfollow = async function () {
+    await makeRequest(`${baseUrl}/subscribe/delete`, null, 'POST')
+}
 let onLoad = async function () {
     let user = await getProfile()
     await getPosts()
@@ -69,6 +71,9 @@ $(document).ready(function (){
     $('#follow-user-form').submit(function (event) {
         event.preventDefault()
         subscribeToUser(event).then(getPosts)
+    })
+    $('#btn-unfollow').click(function () {
+        unfollow().then(getPosts)
     })
     return onLoad()
 })
