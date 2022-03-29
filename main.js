@@ -19,6 +19,12 @@ let makeRequest = async function(url, data, method='GET') {
 let getProfile = async function () {
     return await makeRequest(`${baseUrl}/profile`)
 }
+let editProfile = async function (event){
+    let user = await makeRequest(`${baseUrl}/profile`, $(event.currentTarget).serialize(), 'POST')
+    $('.profile-block > h3').text(`${user.firstName} ${user.lastName}`)
+    $('#editUserModal').modal('toggle')
+    event.currentTarget.reset()
+}
 let getPosts = async function () {
     let posts = await makeRequest(`${baseUrl}/posts`)
     let newPosts = posts.map(post => ({...post, datetime: new Date(post.datetime)}))
@@ -54,7 +60,11 @@ let onLoad = async function () {
 $(document).ready(function (){
     $('#post-form').submit(function(event){
         event.preventDefault()
-        return addPost(event).then(getPosts)
+        addPost(event).then(getPosts)
     });
+    $('#edit-user-form').submit(function (event) {
+        event.preventDefault()
+        editProfile(event).then(getPosts)
+    })
     return onLoad()
 })
