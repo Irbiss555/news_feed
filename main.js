@@ -1,6 +1,5 @@
 let userEmail = 'bissen_irnazarov@mail.com'
-// let userEmail = 'john.doe@gmail.com'
-// let userEmail = 'test@r.com'
+// subscriptions = ['test@r.com', 'naruto@gmail.com', will.smith@gmail.com]
 let baseUrl = `http://146.185.154.90:8000/blog/${userEmail}`
 
 let makeRequest = async function(url, data, method='GET') {
@@ -53,6 +52,21 @@ let addPost = async function (event) {
 let unfollow = async function () {
     await makeRequest(`${baseUrl}/subscribe/delete`, null, 'POST')
 }
+let getSubscriptions = async function () {
+    let users = await makeRequest(`${baseUrl}/subscribe`)
+    let row = 1
+    let body = $('tbody')
+    body.empty()
+    for (let user of users) {
+        let number = $('<th>').attr('scope', 'row').text(row)
+        let firstName = $('<td>').text(user.firstName)
+        let lastName = $('<td>').text(user.lastName)
+        let email = $('<td>').text(user.email)
+        let tr = $('<tr>').append(number, firstName, lastName, email)
+        body.append(tr)
+        row += 1
+    }
+}
 let onLoad = async function () {
     let user = await getProfile()
     await getPosts()
@@ -75,5 +89,6 @@ $(document).ready(function (){
     $('#btn-unfollow').click(function () {
         unfollow().then(getPosts)
     })
+    $('#subscriptionsModal').on('show.bs.modal', getSubscriptions)
     return onLoad()
 })
