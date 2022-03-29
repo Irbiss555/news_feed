@@ -1,5 +1,6 @@
-// let userEmail = 'bissen_irnazarov@mail.com'
-let userEmail = 'john.doe@gmail.com'
+let userEmail = 'bissen_irnazarov@mail.com'
+// let userEmail = 'john.doe@gmail.com'
+// let userEmail = 'test@r.com'
 let baseUrl = `http://146.185.154.90:8000/blog/${userEmail}`
 
 let makeRequest = async function(url, data, method='GET') {
@@ -25,6 +26,11 @@ let editProfile = async function (event){
     $('#editUserModal').modal('toggle')
     event.currentTarget.reset()
 }
+let subscribeToUser = async function (event) {
+    await makeRequest(`${baseUrl}/subscribe`, $(event.currentTarget).serialize(), 'POST')
+    $('#followUserModal').modal('toggle')
+    event.currentTarget.reset()
+}
 let getPosts = async function () {
     let posts = await makeRequest(`${baseUrl}/posts`)
     let newPosts = posts.map(post => ({...post, datetime: new Date(post.datetime)}))
@@ -41,14 +47,8 @@ let getPosts = async function () {
     }
 }
 let addPost = async function (event) {
-    try {
-        await makeRequest(`${baseUrl}/posts`, $(event.currentTarget).serialize(), 'POST')
-        event.currentTarget.reset()
-    }
-    catch (error) {
-        console.log(error)
-    }
-
+    await makeRequest(`${baseUrl}/posts`, $(event.currentTarget).serialize(), 'POST')
+    event.currentTarget.reset()
 }
 
 let onLoad = async function () {
@@ -65,6 +65,10 @@ $(document).ready(function (){
     $('#edit-user-form').submit(function (event) {
         event.preventDefault()
         editProfile(event).then(getPosts)
+    })
+    $('#follow-user-form').submit(function (event) {
+        event.preventDefault()
+        subscribeToUser(event).then(getPosts)
     })
     return onLoad()
 })
